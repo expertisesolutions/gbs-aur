@@ -14,7 +14,7 @@ sha256sums=('SKIP' '56da015d923afa565ba4d141235e4a49964fc92a5c59ae92930de1ccfefc
 
 build() {
   cd $srcdir/gbs
-  patch -p1 -i ../../python2.patch
+  patch -p1 -i $srcdir/python2.patch
 }
 
 package() {
