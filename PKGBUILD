@@ -1,19 +1,20 @@
 # Maintainer: Felipe Magno de Almeida <felipe.m.almeida__at__gmail.com>
 
 pkgbase=gbs
-pkgname=python2-gbs
+pkgname=gbs
 pkgver=20160615
 pkgrel=1
 pkgdesc="Tizen's gbs project"
 arch=('i686' 'x86_64')
 license=('GPL')
-makedepends=('python2')
+depends=('python2' 'python2-git-buildpackage' 'depanneur')
 source=('git://git.tizen.org/tools/gbs.git'
         'python2.patch')
 sha256sums=('SKIP' '56da015d923afa565ba4d141235e4a49964fc92a5c59ae92930de1ccfefc3816')
 
 build() {
-  true
+  cd $srcdir/gbs
+  patch -p1 -i ../../python2.patch
 }
 
 package() {
