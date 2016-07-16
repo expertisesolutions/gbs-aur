@@ -2,7 +2,7 @@
 
 pkgbase=gbs
 pkgname=gbs
-pkgver=20160615
+pkgver=0.24.1
 pkgrel=1
 pkgdesc="Tizen's gbs project"
 arch=('i686' 'x86_64')
@@ -12,6 +12,11 @@ optdepends=('python2-librpm-tizen')
 source=('git+https://git.tizen.org/cgit/tools/gbs.git#branch=release-20160615'
         'python2.patch')
 sha256sums=('SKIP' '56da015d923afa565ba4d141235e4a49964fc92a5c59ae92930de1ccfefc3816')
+
+pkgver() {
+  cd $srcdir/gbs
+  /usr/bin/sed -ne 's/__version__\s*=\s*[\x22\x27]\([^\x22\x27]\+\)[\x22\x27].*/\1/p ' gitbuildsys/__init__.py
+}
 
 build() {
   cd $srcdir/gbs
