@@ -1,0 +1,10 @@
+diff --git a/tools/gbs b/tools/gbs
+index 2a32553..8e5f495 100755
+--- a/tools/gbs
++++ b/tools/gbs
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python2
+ # vim: ai ts=4 sts=4 et sw=4
+ #
+ # Copyright (c) 2011 Intel, Inc.
